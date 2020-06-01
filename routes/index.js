@@ -6,4 +6,15 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'E-Health' });
 });
 
+/*Get register page. */
+router.get('/register', (req,res)=>{
+  res.render('register');
+});
+
+/*Get login page. */
+router.get('/login', (req, res)=>{
+  res.render('login');
+})
+
+
 module.exports = router;
