@@ -16,5 +16,11 @@ router.get('/login', (req, res)=>{
   res.render('login');
 })
 
+/*Get details for a single patient*/
+
+router.get('/patient',(req, res)=>{
+  res.render('patient_history');
+})
+
 
 module.exports = router;
