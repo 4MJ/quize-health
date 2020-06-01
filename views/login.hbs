@@ -1,7 +1,7 @@
 <div class="row justify-content-md-center" style="margin-top: 100px">
     <div class="col-md-6">
 
-        {{#if new-patient}}
+        {{!-- {{#if new-patient}} --}}
         <form method="POST" action="/login">
             <div class="form-group">
                 <label for="exampleInputEmail">Email address</label>
@@ -13,7 +13,7 @@
             </div>
             <button type="submit" class="btn btn-primary"><a href="/patient">login</a></button>
         </form>
-        {{else}}
+        {{!-- {{else}}
         <form method="POST" action="/register">
             <div class="form-group">
                 <label for="patient_name">Name</label>
@@ -53,5 +53,5 @@
             </div>
             <button type="submit" class="btn btn-primary"><a href="login.hbs">Register</a></button>
         </form>
-     {{/if}}
+     {{/if}} --}}
 </div>

@@ -29,14 +29,15 @@ router.get('/patient',(req, res)=>{
 /*Adding a patient's detail*/
 router.post('/patient/add', (req, res, next)=>{
   const form = formidable({multiples: true});
-
   form.parse(req,(err, fields)=>{
     if(err){
       next(err);
       return;
     }
 
-    var patient_name = fields.patient_name
+    var patient_name = fields.patient_name;
+    var patient_age = fields.patient_age;
+    var patient_sex = fields.patient_sex;
 
     //storing data
     dbfile=databasepath("Patient");
@@ -46,6 +47,7 @@ router.post('/patient/add', (req, res, next)=>{
     res.render('/patient/added',{
       new_patient: true,
       added_patient: patient_name
+      
     });
   });
 })
