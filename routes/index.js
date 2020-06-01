@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const fs =require('fs');
+const formidable = require("formidable");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -20,6 +22,22 @@ router.get('/login', (req, res)=>{
 
 router.get('/patient',(req, res)=>{
   res.render('patient_history');
+})
+
+/*Adding a patient's detail*/
+router.post('/patient/add', (req, res, next)=>{
+  const form = formidable({multiples: true});
+
+  form.parse(req,(err, fields)=>{
+    if(err){
+      next(err);
+      return;
+    }
+    var patient_name = fields.inputName;
+
+    //storing data
+    
+  });
 })
 
 

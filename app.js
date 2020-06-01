@@ -8,6 +8,7 @@ var exphbs= require('express-handlebars');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+
 var app = express();
 
 // view engine setup
@@ -19,8 +20,10 @@ app.engine('hbs', exphbs({
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
+
+//middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
